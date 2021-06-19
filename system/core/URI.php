@@ -12,6 +12,8 @@ class URI
 
     public $segments = array();
 
+    public $uri_params = array();
+
     public $controller;
 
     public $method;
@@ -26,6 +28,8 @@ class URI
 
         $this->_setSegments();
 
+        $this->_setUriParams();
+
         $this->_setControllerAndMethod();
     }
 
@@ -38,6 +42,11 @@ class URI
     protected function _setSegments()
     {
         $this->segments = explode('/', $this->uri_string);
+    }
+
+    protected function _setUriParams()
+    {
+        $this->uri_params = array_values(array_slice($this->segments, 2));
     }
 
     protected function _setControllerAndMethod()

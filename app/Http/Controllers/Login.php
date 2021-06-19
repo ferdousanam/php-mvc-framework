@@ -11,8 +11,8 @@ class Login extends Controller
         view("home", ['data' => 'Login index']);
     }
 
-    public function get()
+    public function get($a = null, $b = null)
     {
-        view("home", ['data' => 'Login get']);
+        view("home", ['data' => 'Login get', 'params' => [$a, $b]]);
     }
 }

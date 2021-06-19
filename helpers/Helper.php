@@ -1,12 +1,26 @@
 <?php
 
-if (!function_exists('dd')) {
-    function dd($var)
+if (!function_exists('dump')) {
+    function dump(...$vars)
     {
-        echo '<pre>';
-        print_r($var);
-        echo '</pre>';
-        exit(0);
+        foreach ($vars as $var) {
+            echo '<pre>';
+            print_r($var);
+            echo '</pre>';
+        }
+    }
+}
+
+if (!function_exists('dd')) {
+    function dd(...$vars)
+    {
+        foreach ($vars as $var) {
+            echo '<pre>';
+            print_r($var);
+            echo '</pre>';
+        }
+
+        exit(1);
     }
 }
 

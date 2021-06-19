@@ -12,8 +12,7 @@ class Core
         $className = config('app.controller_namespace') . ucfirst($uri->controller);
         $controller = new $className;
         if (method_exists($controller, $uri->method)) {
-            $method = $uri->method;
-            $controller->$method();
+            call_user_func_array([$controller, $uri->method], $uri->uri_params);
         }
     }
 }
