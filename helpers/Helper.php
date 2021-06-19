@@ -15,7 +15,7 @@ if (!function_exists('loadView')) {
     function loadView($file, $params = [])
     {
         extract($params, EXTR_PREFIX_SAME, '');
-        include $file;
+        include 'resources/views/' . $file . '.php';
     }
 }
 
