@@ -6,8 +6,5 @@ namespace System\Core;
 
 abstract class Controller
 {
-    protected function view($view, $data = [])
-    {
-        loadView($view, $data);
-    }
+
 }

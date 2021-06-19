@@ -11,11 +11,10 @@ if (!function_exists('dd')) {
 }
 
 
-if (!function_exists('loadView')) {
-    function loadView($file, $params = [])
+if (!function_exists('view')) {
+    function view($view, $data = [])
     {
-        extract($params, EXTR_PREFIX_SAME, '');
-        include 'resources/views/' . $file . '.php';
+        (new \System\Core\Load())->view($view, $data);
     }
 }
 

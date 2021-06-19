@@ -8,11 +8,11 @@ class Login extends Controller
 {
     public function index()
     {
-        $this->view("home", ['data' => 'Login index']);
+        view("home", ['data' => 'Login index']);
     }
 
     public function get()
     {
-        $this->view("home", ['data' => 'Login get']);
+        view("home", ['data' => 'Login get']);
     }
 }
