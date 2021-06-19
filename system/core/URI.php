@@ -37,6 +37,7 @@ class URI
     {
         $this->uri_prefix = str_replace('/' . config('app.index_page'), '', $_SERVER['SCRIPT_NAME']);
         $this->uri_string = preg_replace('~^' . $this->uri_prefix . '/(' . config('app.index_page') . ')?/?~', '', $_SERVER['REQUEST_URI']);
+        $this->uri_string = preg_replace('~\?.*~', '', $this->uri_string);
     }
 
     protected function _setSegments()
